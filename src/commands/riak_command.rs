@@ -1,10 +1,7 @@
 
-/**
-* The trait for all Riak Commands.
-* <p>
-* All the commands the {@link RiakClient} can execute extend this class.
-*/
-
+/// The trait for all Riak Commands.
+/// <p>
+/// All the commands the {@link RiakClient} can execute extend this class.
 pub trait RiakCommand<T> {
     fn execute_async(cluster: &RiakCluster,
                      timeout: u64,

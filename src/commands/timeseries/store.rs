@@ -17,9 +17,9 @@ fn  build_core_operation(&self) -> StoreOperation  {
 return StoreOperation.Builder::new(self.builder.tableName).with_rows(self.builder.rows).build();
 }
 
-/**
-* Used to construct a Time Series Store command.
-*/
+///
+/// Used to construct a Time Series Store command.
+///
 pub struct Builder {
 
 let table_name: String;
@@ -30,29 +30,29 @@ let rows: List<Row> = LinkedList<>::new();
 
 impl Builder {
 
-/**
-* Construct a Builder for a Time Series Store command.
-* @param tableName Required. The name of the table to store data to.
-*/
+///
+/// Construct a Builder for a Time Series Store command.
+/// @param tableName Required. The name of the table to store data to.
+///
 pub fn new( table_name: &String) -> Builder {
 let .tableName = table_name;
 }
 
-/**
-* Add a single Row object to the store command.
-* @param row Required. The row to add.
-* @return a reference to this object.
-*/
+///
+/// Add a single Row object to the store command.
+/// @param row Required. The row to add.
+/// @return a reference to this object.
+///
 pub fn  with_row(&self,  row: &Row) -> Builder  {
 self.rows.add(row);
 return self;
 }
 
-/**
-* Add a collection of Row objects to the store command.
-* @param rows Required. The rows to add.
-* @return a reference to this object.
-*/
+///
+/// Add a collection of Row objects to the store command.
+/// @param rows Required. The rows to add.
+/// @return a reference to this object.
+///
 pub fn  with_rows(&self,  rows: &Iterable<Row>) -> Builder  {
 if rows instanceof Collection {
 self.rows.add_all(rows as Collection<Row>);
@@ -65,10 +65,10 @@ for  let r: Row in rows {
 return self;
 }
 
-/**
-* Construct a Time Series Store object.
-* @return a new Time Series Store instance.
-*/
+///
+/// Construct a Time Series Store object.
+/// @return a new Time Series Store instance.
+///
 pub fn  build(&self) -> Store  {
 return Store::new(self);
 }
