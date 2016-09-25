@@ -3,5 +3,8 @@ name = "riak"
 version = "0.1.0"
 authors = ["Chris Holcombe <xfactor973@gmail.com>"]
 
+[dependencies.protobuf]
+
 [dependencies]
 futures = "~0.1"
+log = "~0.3"
